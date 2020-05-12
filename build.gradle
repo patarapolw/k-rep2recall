@@ -1,0 +1,27 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.72'
+}
+
+group 'io.github.patarapolw'
+version '0.2'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation group: 'org.xerial', name: 'sqlite-jdbc', version: '3.31.1'
+    implementation 'io.javalin:javalin:3.8.0'
+    implementation 'ch.qos.logback:logback-classic:1.2.3'
+    implementation "io.swagger.core.v3:swagger-core:2.0.9"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin:2.10.1"
+    implementation "cc.vileda:kotlin-openapi3-dsl:0.20.2"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
